@@ -3,6 +3,8 @@ use sqlx::sqlite::SqlitePool;
 // Stub code -- note that whatever code works with SQL has to be in the library,
 // not in the binary, so that we can run `cargo sqlx prepare` against one crate.
 
+mod state;
+
 pub async fn insert_table(pool: &SqlitePool) -> anyhow::Result<i64> {
     let mut conn = pool.acquire().await?;
 
